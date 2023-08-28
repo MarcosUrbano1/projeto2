@@ -7,5 +7,3 @@ class Pessoa:
         self.peso =  peso
 
         pessoa1 = Pessoa (LilmarHellstar, 27, 1,79, 70)
-
-print (pessoa1.nome)
