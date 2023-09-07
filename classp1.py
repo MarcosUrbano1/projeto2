@@ -5,43 +5,65 @@ class Pessoa:
         self.idade = idade
         self.altura = altura
         self.peso =  peso
+
+
     def apresentar(self):
         print(f'Muito prazer!Eu me chamo {self.nome} e tenho {self.idade} anos de idade.')
-    def eh_maior(self,idade):
-        if idade >= 18:
-            print('Eu sou maior de idade!')
-        elif idade <= 17:
-            print('Eu sou menor de idade!')
-    def imc(self):
-        print(f'Você pesa {self.peso}')
-    def imc_longo(self,peso):
-        if peso<= 25.0:
-            print('saldavel')
-        elif peso<= 29.9:
-            print('Você é acima so peso')
-        elif peso<= 34.9:
-            print('Tem obesidade 1')
-        elif peso<= 39.9:
-            print('Tem obesidade 2,severa')
-        elif peso>= 40:
-            print('Tem obesidade 3,mórbida')
+
+    def eh_maior(self):
+        return self.idade >= 18
+    
+    def imc(self): 
+        return self.peso / (self.altura * self.altura)
+    
+    def imc_longo(self):
+        imc= self.imc()
+        if imc <18.5:
+            return 'Abaixo do peso.'
+        elif imc <25.0:
+            return 'Peso normal.'
+        elif imc <30.0:
+            return 'Excesso de peso.'
+        elif imc <35.0:
+            return 'Obesidade 1.'
+        elif imc <40.0:
+            return 'Obesidade 2.'
+        else:
+            return 'Obesidade 3.'
+
     def comparar_idade(self,idade):
-        if idade< 17:
-            print('Você é mais novo(a) que eu!')
-        elif idade== 17:
-            print('Você tem a mesma idade que eu!')
-        elif idade> 17:
-            print('Você é mais velho(a) que eu!')
+        if idade < self.idade:
+            print(f'{self.nome} é mais velho que eu!')
+        elif idade > self.idade:
+            print(f'{self.nome} é mais novo que eu!')
+        else:
+            print(f'{self.idade} tem a mesma idade que eu!')
 
-pessoa1=Pessoa('Gallye', '21', '1.78', '33.6')
+pessoa1=Pessoa('Gallye', 21, 1.78, 33.6)
+
 pessoa1.apresentar()
-pessoa1.eh_maior(idade=21)
-pessoa1.imc()
-pessoa1.imc_longo(peso=33.6)
-pessoa1.comparar_idade(idade=21)
 
-Herina=Pessoa('Herina', '17', '1.63', '27.9')
+if pessoa1.eh_maior():
+    print('É maior de idade!')
+else:
+    print('É menor de idade!')
+print(pessoa1.imc())
+
+print(pessoa1.imc_longo())
+
+pessoa1.comparar_idade(17)
+
+print('   ')
+
+Herina=Pessoa('Herina', 17, 1.63, 27.9)
+
 Herina.apresentar()
-Herina.eh_maior(idade=17)
-Herina.comparar_idade(idade=17)
-Herina.imc_longo(peso=27.9)
+
+if Herina.eh_maior():
+    print('É maior de idade!')
+else:
+    print('É menor de idade!')
+print(Herina.imc())
+Herina.comparar_idade(21)
+
+print(Herina.imc_longo())
