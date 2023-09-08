@@ -1,11 +1,11 @@
 class Pessoa:
 
-    def __init__(self, nome, idade, altura, peso):
+    def __init__(self, nome, idade, altura, peso, data_nascimento):
         self.nome = nome
         self.idade = idade
         self.altura = altura
         self.peso =  peso
-
+        self.data_nascimento = data_nascimento
 
     def apresentar(self):
         print(f'Muito prazer!Eu me chamo {self.nome} e tenho {self.idade} anos de idade.')
@@ -39,31 +39,4 @@ class Pessoa:
         else:
             print(f'{self.idade} tem a mesma idade que eu!')
 
-pessoa1=Pessoa('Gallye', 21, 1.78, 33.6)
-
-pessoa1.apresentar()
-
-if pessoa1.eh_maior():
-    print('É maior de idade!')
-else:
-    print('É menor de idade!')
-print(pessoa1.imc())
-
-print(pessoa1.imc_longo())
-
-pessoa1.comparar_idade(17)
-
-print('   ')
-
-Herina=Pessoa('Herina', 17, 1.63, 27.9)
-
-Herina.apresentar()
-
-if Herina.eh_maior():
-    print('É maior de idade!')
-else:
-    print('É menor de idade!')
-print(Herina.imc())
-Herina.comparar_idade(21)
-
-print(Herina.imc_longo())
+import re
