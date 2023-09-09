@@ -1,11 +1,13 @@
+import re
+
 class Pessoa:
 
-    def __init__(self, nome, idade, altura, peso, data_nascimento):
+    def __init__(self, nome, idade, altura, peso, nascimento):
         self.nome = nome
         self.idade = idade
         self.altura = altura
         self.peso =  peso
-        self.data_nascimento = data_nascimento
+        self.nascimento = nascimento
 
     def apresentar(self):
         print(f'Muito prazer!Eu me chamo {self.nome} e tenho {self.idade} anos de idade.')
@@ -39,4 +41,18 @@ class Pessoa:
         else:
             print(f'{self.idade} tem a mesma idade que eu!')
 
-import re
+    def validar_nascimento(self,nascimento):
+        self.nascimento = r'^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$'
+        return re.match(self.nascimento, nascimento)
+    
+    def validar_nome(self,nome):
+        self.nome = r'^([A-Za-z])$'
+        return re.match(self.nome, nome)
+    
+    def validar_altura(self,altura):
+        self.altura = r'^([0-90-9].[0-9])$'
+        return re.match(self.altura, altura)
+    
+    def validar_peso(self,peso):
+        self.peso = r'^([0-90-9].[0-9])$'
+        return re.match(self.peso, peso)
