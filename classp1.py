@@ -19,7 +19,7 @@ class Pessoa:
     def altura(self):
         return self.altura
 
-    property
+    @property
     def peso(self):
         return self.peso
 
