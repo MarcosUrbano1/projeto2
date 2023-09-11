@@ -36,8 +36,9 @@ while next:
             break
         else:
             print('Data de nascimento invalida!Digite no formato: dd/mm/aaaa')
-
-user = Pessoa(nome, idade, altura, peso, nascimento)
+            
+#adicionarei funcoes em breve
+#user = Pessoa(nome, idade, altura, peso, nascimento)
 
 
     
