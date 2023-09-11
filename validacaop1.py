@@ -2,7 +2,7 @@ import classp1
 import re
 
 next = True
-
+end = False
 while next:
     while True:
         nome = input('Digite seu nome: ')
@@ -32,11 +32,11 @@ while next:
             print('Peso invalida!Digite no formato: 00.0')
     while True:
         nascimento = input('Digite sua data de nasciment,(dd/mm/aaaa): ')
-        if re.match(r'^(0[1-9|[12][0-9]|1[0-2])/\d{4}$', nascimento):
+        if re.match(r'^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$', nascimento):
             break
         else:
             print('Data de nascimento invalida!Digite no formato: dd/mm/aaaa')
-            
+
 #adicionarei funcoes em breve
 #user = Pessoa(nome, idade, altura, peso, nascimento)
 
